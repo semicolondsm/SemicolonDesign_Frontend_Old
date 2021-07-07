@@ -2,7 +2,7 @@
 
 # XQUARE UI
 
-XQUARE의 웹 프론트의 UI를책임질 React전용 UI 라이브러리
+XQUARE의 웹 프론트의 UI를책임질 React UI 라이브러리
 
 [**View the full documentation ▸**](아직없다)
 

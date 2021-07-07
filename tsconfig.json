@@ -1,19 +1,23 @@
+
 {
     "compilerOptions": {
-      "declaration": true,
-      "declarationDir": "./lib", // lib폴더에 ts 타입 속성을 빌드한다.
       "target": "es5",
+      "module": "esnext",
       "lib": ["dom", "dom.iterable", "esnext"],
-      "skipLibCheck": true,
-      "esModuleInterop": true,
-      "allowSyntheticDefaultImports": true,
-      "strict": true,
-      "module": "es6",
+      "jsx": "react",
+      "declaration": true,
       "moduleResolution": "node",
       "resolveJsonModule": true,
-      "jsx": "react",
-      "typeRoots": ["@types"]
+      "declarationDir": "./dist",
+      "sourceMap": true,
+      "outDir": "./dist",
+      "strict": true,
+      "noImplicitThis": false /* Raise error on 'this' expressions with an implied 'any' type. */,
+      "baseUrl": "src",
+      "esModuleInterop": true,
+      "forceConsistentCasingInFileNames": true
     },
-    "include": ["**/*.tsx", "**/*.ts", "@types", "index.ts"],
-    "exclude": ["node_modules", "build", "dist", "lib", "example", "rollup.config.js"]
-}
+    "include": ["src"],
+    "exclude": ["node_modules", "dist", "**/*.stories.tsx", "cypress"]
+  }
+  

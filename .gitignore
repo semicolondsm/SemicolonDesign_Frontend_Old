@@ -1,1 +1,34 @@
-/node_modules
+# package
+node_modules/
+
+# MacOS
+.DS_Store
+
+# generated files
+dist/
+build/
+
+# generated site
+site/
+
+# coverage reports
+coverage/
+
+# test reports
+test-reports/
+
+# test outputs
+cypress/videos/
+cypress/screenshots/
+
+# logs
+yarn-error.log
+npm-debug.log
+npm-debug.log.*
+
+# editors
+.idea
+.vscode
+
+# storybook static
+storybook-static
