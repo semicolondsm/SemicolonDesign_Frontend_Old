@@ -28,7 +28,6 @@ npm-debug.log.*
 
 # editors
 .idea
-.vscode
 
 # storybook static
 storybook-static

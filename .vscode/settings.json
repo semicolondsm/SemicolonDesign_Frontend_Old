@@ -1,0 +1,9 @@
+{
+    "json.schemas": [
+
+    
+    ],
+    "files.associations": {
+        "*.mdx": "markdown"
+    },
+}
