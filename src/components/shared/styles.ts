@@ -16,5 +16,10 @@ export const typography = {
         regular : '300',
         medium : '400',
         bold : '500'
+    },
+    size : {
+        title1 : 40,
+        title2 : 36,
+        title3 : 32,
     }
 }
