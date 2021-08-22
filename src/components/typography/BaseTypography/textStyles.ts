@@ -1,6 +1,4 @@
 import { css } from '@emotion/react';
-import { typography } from '../../shared/styles'
-const { weight } = typography;
 
 export const title1 = css`
     font-size: 40px;

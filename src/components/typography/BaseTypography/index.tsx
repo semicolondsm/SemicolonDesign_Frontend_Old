@@ -87,7 +87,6 @@ const TextElement = styled.div<Props>`
     font-weight: ${({fontWeight, md})=>fontWeight ? typography.weight[fontWeight]: defaultWeight[md]};
     ${(props)=>props.textAlign && `text-align: ${props.textAlign}`};
     ${(props)=>typographyList[props.md]};
-    font-family: 'Noto Sans KR', sans-serif;
 `
 
 
@@ -95,7 +94,7 @@ export const BaseTypography: FC<Props> = (props) => {
     const {children, md, ...restProps} = props;
     const element = defaultElement[md] as TypoElement;
     return(
-        <TextElement md={md} as={element}  {...restProps}>
+        <TextElement md={md} as={element} {...restProps}>
             {children}
         </TextElement>
     )
