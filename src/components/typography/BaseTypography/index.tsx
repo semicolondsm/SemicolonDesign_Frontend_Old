@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import styled from '@emotion/styled';
-import { color, typography } from '../../shared/styles';
+import { colors, typography } from '../../shared/styles';
 
 import { 
     body1, 
@@ -29,7 +29,7 @@ export interface TypoProps {
     fontWeight?: FontWeight,
 }
 
-type FontWeight = keyof typeof typography.weight;
+type FontWeight = keyof typeof typography.fontWeight;
 type Props = OwnProps & TypoProps;
 type Typo = keyof typeof typographyList;
 type TypoElement = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'h6' | 'p' | 'div';
@@ -50,18 +50,18 @@ const defaultElement = {
 }
 
 const defaultWeight = {
-    Title1: typography.weight.bold,
-    Title2: typography.weight.bold,
-    Title3: typography.weight.bold,
-    Subtitle1: typography.weight.medium,
-    Subtitle2: typography.weight.medium,
-    Subtitle3: typography.weight.medium,
-    Subtitle4: typography.weight.medium,
-    Body1: typography.weight.regular,
-    Body2: typography.weight.regular,
-    Body3: typography.weight.regular,
-    Caption: typography.weight.regular,
-    Botton: typography.weight.regular,
+    Title1: typography.fontWeight.bold,
+    Title2: typography.fontWeight.bold,
+    Title3: typography.fontWeight.bold,
+    Subtitle1: typography.fontWeight.medium,
+    Subtitle2: typography.fontWeight.medium,
+    Subtitle3: typography.fontWeight.medium,
+    Subtitle4: typography.fontWeight.medium,
+    Body1: typography.fontWeight.regular,
+    Body2: typography.fontWeight.regular,
+    Body3: typography.fontWeight.regular,
+    Caption: typography.fontWeight.regular,
+    Botton: typography.fontWeight.regular,
 }
 
 const typographyList = {
@@ -83,8 +83,8 @@ const typographyList = {
 
 const TextElement = styled.div<Props>`
     margin: 0;
-    color : ${(props)=>props.color || color.primary.black };
-    font-weight: ${({fontWeight, md})=>fontWeight ? typography.weight[fontWeight]: defaultWeight[md]};
+    color : ${(props)=>props.color || colors.black };
+    font-weight: ${({fontWeight, md}) => fontWeight ? typography.fontWeight[fontWeight]: defaultWeight[md]};
     ${(props)=>props.textAlign && `text-align: ${props.textAlign}`};
     ${(props)=>typographyList[props.md]};
 `
