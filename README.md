@@ -1,8 +1,8 @@
 
 
-# XQUARE UI
+# SemicolonDesign Frontend
 
-XQUARE의 웹 프론트의 UI를책임질 React UI 라이브러리
+Semicolon;에서 개발한 교내 프로젝트 전용 디자인 시스템입니다.
 
 [**View the full documentation ▸**](https://main--60e54adc171c1d003bf97d21.chromatic.com/)
 
@@ -30,5 +30,4 @@ const Example: React.FC = () => {
 ## 🎉 Worked
 
 아직없다!
-
 
