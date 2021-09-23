@@ -20,8 +20,8 @@ export interface ButtonProps {
 export interface ButtonElementProps {
     cursor: CursorType;
     background: string;
-    width: number;
-    height: number;
+    paddingVertical: number;
+    paddingHorizontal: number;
     size: SizeType;
     fillStyle: FillStyleType;
     marginLeft: number;
@@ -31,9 +31,20 @@ export interface ButtonElementProps {
 export const Colors = {
   default: colors.grey100,
   defaultActive: colors.grey300,
-  defaultColor: colors.grey700,
   purple: colors.purple400,
+  purpleActive: colors.purple500,
   purpleLight: colors.purple50,
-  border: colors.grey100,
+  purpleLightActive: colors.purple100,
+  border: colors.white,
+  borderColor: colors.grey100,
+  borderActive: colors.grey100,
   full: colors.grey100
 };
+
+export const FontColors = {
+  default: colors.grey700,
+  purple: colors.white,
+  purpleLight: colors.purple400,
+  border: colors.grey700,
+  full: colors.grey700
+}
