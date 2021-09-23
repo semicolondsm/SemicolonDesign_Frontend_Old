@@ -3,7 +3,9 @@ import { ButtonElement } from './styles';
 import { 
   Colors, 
   ButtonProps,
+  FontColors
 } from './types';
+import { Botton } from '../typography';
 // import * as Styles from './styles';
 
 enum Cursor {
@@ -12,16 +14,16 @@ enum Cursor {
   DEFAULT = "pointer"
 };
 
-enum Width {
-  lg = 3,
-  md = 2,
-  sm = 1
+enum PaddingVertical {
+  lg = 0,
+  md = 16,
+  sm = 14
 };
 
-enum Height {
-  lg = 3,
-  md = 2,
-  sm = 1
+enum PaddingHorizontal {
+  lg = 0,
+  md = 68,
+  sm = 16
 };
 
 const initialProps: ButtonProps = {
@@ -50,8 +52,8 @@ const Button: FC<ButtonProps> = (props = initialProps) => {
   const styledProps = {
     cursor: Cursor[cursorType],
     background: Colors[fill || "default"],
-    width: Width[size || "md"],
-    height: Height[size || "md"],
+    paddingVertical: PaddingVertical[size || "md"],
+    paddingHorizontal: PaddingHorizontal[size || "md"],
     size: size || "md",
     fillStyle: fill || "default",
     marginLeft: leftIcon ? 6 : 0,
@@ -66,7 +68,9 @@ const Button: FC<ButtonProps> = (props = initialProps) => {
       {...styledProps}
     >
       { leftIcon }
-      { children }
+      <Botton color={FontColors[fill || "default"]}>
+        { children }
+      </Botton>
       { rightIcon }
     </ButtonElement>
   )
