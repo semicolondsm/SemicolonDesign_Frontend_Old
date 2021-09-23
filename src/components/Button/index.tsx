@@ -6,6 +6,9 @@ import {
   FontColors
 } from './types';
 import { Botton } from '../typography';
+import { 
+  colorObjectToColorString
+} from './functions';
 // import * as Styles from './styles';
 
 enum Cursor {
@@ -51,7 +54,7 @@ const Button: FC<ButtonProps> = (props = initialProps) => {
 
   const styledProps = {
     cursor: Cursor[cursorType],
-    background: Colors[fill || "default"],
+    background: Colors[colorObjectToColorString(fill)],
     paddingVertical: PaddingVertical[size || "md"],
     paddingHorizontal: PaddingHorizontal[size || "md"],
     size: size || "md",
@@ -68,7 +71,7 @@ const Button: FC<ButtonProps> = (props = initialProps) => {
       {...styledProps}
     >
       { leftIcon }
-      <Botton color={FontColors[fill || "default"]}>
+      <Botton color={FontColors[colorObjectToColorString(fill, true)]}>
         { children }
       </Botton>
       { rightIcon }
