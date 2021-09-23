@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
-import { colors } from '../shared/styles';
 import {
     ButtonElementProps, 
     SizeType, 
@@ -12,10 +11,9 @@ export const ButtonElement = styled.button<ButtonElementProps>`
     border: none;
     cursor: ${(props) => props.cursor};
     background: ${(props) => props.background};
-    /* width: ${(props) => props.width}px;
-    height: ${(props) => props.height}px; */
     margin-left: ${(props) => props.marginLeft}px;
     margin-right: ${(props) => props.marginRight}px;
+    padding: ${(props) => `${props.paddingVertical}px ${props.paddingHorizontal}px`};
     ${(props) => sizeToCssObject(props.size)}
     ${(props) => colorToCssObject(props.fillStyle)}
 `;
@@ -30,17 +28,14 @@ export const Large = css`
 `;
 
 export const Medium = css`
-    padding: 16px 67px;
     border-radius: 12px;
 `;
 
 export const Small = css`
-    padding: 14px 16px;
     border-radius: 4px;
 `;
 
 export const Default = css`
-    color: ${Colors.defaultColor};
     &:hover {
         background: ${Colors.defaultActive};
     }
@@ -52,32 +47,37 @@ export const Default = css`
 
 export const Purple = css`
     &:hover {
-
+        background: ${Colors.purpleActive};
     }
 
     &:active {
-
+        background: ${Colors.purpleActive};
     }
 `;
 
 export const PurpleLight = css`
     &:hover {
-
+        background: ${Colors.purpleLightActive};
     }
 
     &:active {
-
+        background: ${Colors.purpleLightActive};
     }
 `;
 
 export const Border = css`
+    border: 1px solid ${Colors.borderColor};
     &:hover {
-
+        background: ${Colors.borderActive};
     }
 
     &:active {
-
+        background: ${Colors.borderActive};
     }
+`;
+
+export const Full = css`
+
 `;
 
 export const Link = css`
@@ -107,6 +107,10 @@ function colorToCssObject(color: FillStyleType) {
             return Purple;
         case "purpleLight":
             return PurpleLight;
+        case "border":
+            return Border;
+        case "full":
+            return Full;
         default:
             return Default;
     }
