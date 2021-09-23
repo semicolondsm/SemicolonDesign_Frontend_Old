@@ -1,33 +1,15 @@
-import React, { ReactElement, Component, MouseEvent, FC } from 'react';
+import React, { FC } from 'react';
 import { ButtonElement } from './styles';
-
-type size = "sm" | "md" | "lg";
-type fillStyle = "default" | "purple" | "purpleLight" | "border" | "full";
-
-interface ButtonProps {
-  leftIcon?: ReactElement<any, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)>;
-  rightIcon?: ReactElement<any, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)>;
-  fill?: fillStyle;
-  size?: size;
-  className?: string;
-  loading?: boolean;
-  disabled?: boolean;
-  background?: boolean;
-  onClick?: (event?: MouseEvent<HTMLElement, MouseEvent>) => void;
-};
+import { 
+  Colors, 
+  ButtonProps,
+} from './types';
+// import * as Styles from './styles';
 
 enum Cursor {
   DISABLED = "not-allowed",
   LOADING = "progress",
   DEFAULT = "pointer"
-};
-
-enum BackgroundColor {
-  default = "#F5F5F5",
-  purple = "#9650FA",
-  purpleLight = "#F0E6FF",
-  border = "#F5F5F5",
-  full = "#F5F5F5"
 };
 
 enum Width {
@@ -67,9 +49,13 @@ const Button: FC<ButtonProps> = (props = initialProps) => {
 
   const styledProps = {
     cursor: Cursor[cursorType],
-    background: BackgroundColor[fill || "default"],
+    background: Colors[fill || "default"],
     width: Width[size || "md"],
-    height: Height[size || "md"]
+    height: Height[size || "md"],
+    size: size || "md",
+    fillStyle: fill || "default",
+    marginLeft: leftIcon ? 6 : 0,
+    marginRight: rightIcon ? 6 : 0
   };
 
   return (
