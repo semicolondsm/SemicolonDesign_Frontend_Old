@@ -2,13 +2,19 @@ import { ReactElement, Component, MouseEvent } from 'react';
 import { colors } from '../shared/styles';
 
 export type SizeType = "sm" | "md" | "lg";
+
 export type BackgroundNoneSupportFillStyleType = "default" | "purple";
+
 export type FillStyleType = "purpleLight" | "link" | "border" | "full" | BackgroundNoneSupportFillStyleType;
+
 export type BackgroundNoneFillStyleType = "bnDefault" | "bnPurple";
+
 export interface FillStyleObjectType {
-  fillStyle: FillStyleType,
-  background: boolean
-} 
+  fillStyle?: FillStyleType,
+  background?: boolean,
+  isFull?: boolean
+};
+
 export type CursorType = "not-allowed" | "progress" | "pointer";
 
 export interface ButtonProps {
@@ -69,4 +75,4 @@ export const FontColors = {
   full: colors.grey700,
   bnDefault: colors.grey700,
   bnPurple: colors.purple400
-}
+};
