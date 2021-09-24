@@ -12,7 +12,7 @@ export type BackgroundNoneFillStyleType = "bnDefault" | "bnPurple";
 export interface FillStyleObjectType {
   fillStyle?: FillStyleType,
   background?: boolean,
-  isFull?: boolean
+  full?: boolean
 };
 
 export type CursorType = "not-allowed" | "progress" | "pointer";
