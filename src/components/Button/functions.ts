@@ -58,7 +58,7 @@ export function colorObjectToCssObject(color: FillStyleType | FillStyleObjectTyp
     if(typeof color === "string") {
         return colorToCssObject(color);
     } else {
-        if(color.background === true) return colorToCssObject(color.fillStyle);
+        if(color.background === true) return colorToCssObject(color.fillStyle || "default");
         else {
             switch(color.fillStyle) {
                 case "default":
@@ -66,25 +66,25 @@ export function colorObjectToCssObject(color: FillStyleType | FillStyleObjectTyp
                 case "purple":
                     return colorToCssObject(firstCharToTypeMessage(color.fillStyle));
                 default:
-                    return colorToCssObject(color.fillStyle);
+                    return colorToCssObject(color.fillStyle || "default");
             }
         }
     }
 }
 
 export function colorObjectToColorString(color?: FillStyleType | FillStyleObjectType, addedBn?: boolean) {
-    if(typeof color === "string") return color;
+    if(typeof color === "string") return color || "default";
     else if(typeof color === "undefined") return "default"
-    else if(addedBn) {
+    else if(addedBn && color.background === false) {
         switch(color.fillStyle) {
             case "default":
                 return firstCharToTypeMessage(color.fillStyle);
             case "purple":
                 return firstCharToTypeMessage(color.fillStyle);
             default:
-                return color.fillStyle;
+                return color.fillStyle || "default";
         }
-    } else return color.fillStyle;
+    } else return color.fillStyle || "default";
 }
 
 export function firstCharToTypeMessage(message: string): BackgroundNoneFillStyleType {
