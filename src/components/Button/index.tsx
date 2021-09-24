@@ -47,7 +47,7 @@ const Button: FC<ButtonProps> = (props = initialProps) => {
     leftIcon,
     rightIcon,
     loading,
-    size
+    size,
   } = props;
 
   const cursorType = disabled ? "DISABLED" : loading ? "LOADING" : "DEFAULT";
@@ -60,7 +60,7 @@ const Button: FC<ButtonProps> = (props = initialProps) => {
     size: size || "md",
     fillStyle: fill || "default",
     marginLeft: leftIcon ? 6 : 0,
-    marginRight: rightIcon ? 6 : 0
+    marginRight: rightIcon ? 6 : 0,
   };
 
   return (

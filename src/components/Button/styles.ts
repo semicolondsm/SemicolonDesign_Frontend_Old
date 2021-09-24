@@ -19,6 +19,7 @@ export const ButtonElement = styled.button<ButtonElementProps>`
     padding: ${(props) => `${props.paddingVertical}px ${props.paddingHorizontal}px`};
     ${(props) => sizeToCssObject(props.size)}
     ${(props) => colorObjectToCssObject(props.fillStyle)}
+    ${(props) => typeof props.fillStyle !== "string" && props.fillStyle.full && Full}
 `;
 
 export const Large = css`
@@ -78,7 +79,9 @@ export const BnPurple = css`
 `;
 
 export const Full = css`
-
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
 `;
 
 export const Link = css`
