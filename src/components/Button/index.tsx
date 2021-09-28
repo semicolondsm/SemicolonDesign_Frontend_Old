@@ -3,12 +3,14 @@ import { ButtonElement } from './styles';
 import { 
   Colors, 
   ButtonProps,
-  FontColors
+  FontColors,
+  ActiveColors
 } from './types';
 import { Botton } from '../typography';
 import { 
-  colorObjectToColorString
-} from './functions';
+  colorObjectToColorString, isBackgroundNone
+} from './utils';
+import Spinner from '../../static/svg/Spinner';
 // import * as Styles from './styles';
 
 enum Cursor {
@@ -18,23 +20,29 @@ enum Cursor {
 };
 
 enum PaddingVertical {
-  lg = 0,
+  lg = 16,
   md = 16,
-  sm = 14
+  sm = 8
 };
 
 enum PaddingHorizontal {
-  lg = 0,
+  lg = 150,
   md = 68,
   sm = 16
 };
+
+enum BorderRadius {
+  lg = 12,
+  md = 12,
+  sm = 4
+}
 
 const initialProps: ButtonProps = {
   fill: "default",
   size: "md",
   loading: false,
   disabled: false,
-  background: true,
+  background: true
 };
 
 const Button: FC<ButtonProps> = (props = initialProps) => {
@@ -51,29 +59,36 @@ const Button: FC<ButtonProps> = (props = initialProps) => {
   } = props;
 
   const cursorType = disabled ? "DISABLED" : loading ? "LOADING" : "DEFAULT";
+  const colorString = colorObjectToColorString(fill, true);
+  const BackgroundColor = Colors[colorString];
+  const BackgroundActiveColor = ActiveColors[colorString];
+  const FontColor = FontColors[colorString];
 
   const styledProps = {
     cursor: Cursor[cursorType],
-    background: Colors[colorObjectToColorString(fill)],
+    background: BackgroundColor,
+    activeBackground: loading && isBackgroundNone(colorString) ? BackgroundColor : BackgroundActiveColor,
     paddingVertical: PaddingVertical[size || "md"],
     paddingHorizontal: PaddingHorizontal[size || "md"],
+    borderRadius: BorderRadius[size || "md"],
     size: size || "md",
     fillStyle: fill || "default",
     marginLeft: leftIcon ? 6 : 0,
-    marginRight: rightIcon ? 6 : 0,
+    marginRight: loading || rightIcon ? 6 : 0,
   };
 
   return (
     <ButtonElement
-      disabled={disabled}
-      className={[className].join(" ")}
+      {...disabled}
+      {...className}
       {...onClick}
       {...styledProps}
     >
       { leftIcon }
-      <Botton color={FontColors[colorObjectToColorString(fill, true)]}>
+      <Botton className="semicolon-button-typography" color={FontColor}>
         { children }
       </Botton>
+      { loading && <Spinner fill={colorString} /> }
       { rightIcon }
     </ButtonElement>
   )
