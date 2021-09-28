@@ -5,7 +5,7 @@ export type SizeType = "sm" | "md" | "lg";
 
 export type BackgroundNoneSupportFillStyleType = "default" | "purple";
 
-export type FillStyleType = "purpleLight" | "link" | "border" | "full" | BackgroundNoneSupportFillStyleType;
+export type FillStyleType = "purpleLight" | "link" | "border" | BackgroundNoneSupportFillStyleType;
 
 export type BackgroundNoneFillStyleType = "bnDefault" | "bnPurple";
 
@@ -32,8 +32,10 @@ export interface ButtonProps {
 export interface ButtonElementProps {
     cursor: CursorType;
     background: string;
+    activeBackground: string;
     paddingVertical: number;
     paddingHorizontal: number;
+    borderRadius: number;
     size: SizeType;
     fillStyle: FillStyleType | FillStyleObjectType;
     marginLeft: number;
@@ -42,28 +44,23 @@ export interface ButtonElementProps {
 
 export const Colors = {
   default: colors.grey100,
-  defaultActive: colors.grey300,
-
   purple: colors.purple400,
-  purpleActive: colors.purple500,
-
   purpleLight: colors.purple50,
-  purpleLightActive: colors.purple100,
-
   border: colors.white,
   borderColor: colors.grey100,
-  borderActive: colors.grey100,
-
   link: colors.white,
-  linkActive: colors.white,
-
   bnDefault: colors.white,
-  bnDefaultActive: colors.grey50,
-
   bnPurple: colors.white,
-  bnPurpleActive: colors.purple50,
+};
 
-  full: colors.grey100
+export const ActiveColors = {
+  default: colors.grey300,
+  purple: colors.purple500,
+  purpleLight: colors.purple100,
+  border: colors.grey100,
+  link: colors.white,
+  bnDefault: colors.grey50,
+  bnPurple: colors.purple50,
 };
 
 export const FontColors = {
