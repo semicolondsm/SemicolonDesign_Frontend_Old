@@ -1,0 +1,117 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs/blocks';
+import { light, dark } from './'
+
+<Meta title="DESIGN TOKEN/Colors" />
+
+# Colors
+> 브랜드를 나타내는 고유색으로 브랜드 전체의 통일감을 부여하며, 사용자에게 끊임없이 같은 메시지를 전달하기에 효과적입니다 - Remain Style Guide
+
+<br/>
+
+#### Light Scheme
+<br/>
+
+### Primary Color
+<ColorPalette>
+    <ColorItem title="black" subtitle="Black" colors={[light.scheme.black]} />
+    <ColorItem title="white" subtitle="White" colors={[light.scheme.white]} />
+    <ColorItem title="light.scheme.purple[50 ~ 900]" subtitle="Purple" 
+        colors={[
+            light.scheme.purple50, 
+            light.scheme.purple100,
+            light.scheme.purple200,
+            light.scheme.purple300,
+            light.scheme.purple400,
+            light.scheme.purple500,
+            light.scheme.purple600,
+            light.scheme.purple700,
+            light.scheme.purple800,
+            light.scheme.purple900,
+    ]} />
+    <ColorItem title="light.scheme.gray[50 ~ 900]" subtitle="Gray" 
+        colors={[
+            light.scheme.gray50,
+            light.scheme.gray100,
+            light.scheme.gray200,
+            light.scheme.gray300,
+            light.scheme.gray400,
+            light.scheme.gray500,
+            light.scheme.gray600,
+            light.scheme.gray700,
+            light.scheme.gray800,
+            light.scheme.gray900,
+    ]} />    
+</ColorPalette>
+
+### Secondary Color
+<ColorPalette>
+    <ColorItem title="light.scheme.indigo[50 ~ 900]" subtitle="Indigo" 
+        colors={[
+            light.scheme.indigo50,
+            light.scheme.indigo100,
+            light.scheme.indigo200,
+            light.scheme.indigo300,
+            light.scheme.indigo400,
+            light.scheme.indigo500,
+            light.scheme.indigo600,
+            light.scheme.indigo700,
+            light.scheme.indigo800,
+            light.scheme.indigo900,
+        ]} /> 
+    <ColorItem title="light.scheme.yellow[50 ~ 900]" subtitle="Yellow" 
+        colors={[
+            light.scheme.yellow50,
+            light.scheme.yellow100,
+            light.scheme.yellow200,
+            light.scheme.yellow300,
+            light.scheme.yellow400,
+            light.scheme.yellow500,
+            light.scheme.yellow600,
+            light.scheme.yellow700,
+            light.scheme.yellow800,
+            light.scheme.yellow900,
+        ]} /> 
+</ColorPalette>
+
+### System Color
+<ColorPallete>
+    <ColorItem title="light.scheme.red[50 ~ 900]" subtitle="Red" 
+        colors={[
+            light.scheme.red50,
+            light.scheme.red100,
+            light.scheme.red200,
+            light.scheme.red300,
+            light.scheme.red400,
+            light.scheme.red500,
+            light.scheme.red600,
+            light.scheme.red700,
+            light.scheme.red800,
+            light.scheme.red900,
+        ]} /> 
+    <ColorItem title="light.scheme.green[50 ~ 900]" subtitle="Green" 
+        colors={[
+            light.scheme.green50,
+            light.scheme.green100,
+            light.scheme.green200,
+            light.scheme.green300,
+            light.scheme.green400,
+            light.scheme.green500,
+            light.scheme.green600,
+            light.scheme.green700,
+            light.scheme.green800,
+            light.scheme.green900,
+        ]} />
+    <ColorItem title="light.scheme.blue[50 ~ 900]" subtitle="blue" 
+        colors={[
+            light.scheme.blue50,
+            light.scheme.blue100,
+            light.scheme.blue200,
+            light.scheme.blue300,
+            light.scheme.blue400,
+            light.scheme.blue500,
+            light.scheme.blue600,
+            light.scheme.blue700,
+            light.scheme.blue800,
+            light.scheme.blue900,
+        ]} />
+</ColorPallete>
