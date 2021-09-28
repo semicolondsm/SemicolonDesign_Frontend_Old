@@ -16,17 +16,17 @@ export const light: Readonly<ColorTheme> = {
         purple800: '#500EAD',
         purple900: '#420399',
 
-        /* grey */
-        grey50: '#FAFAFA',
-        grey100: '#F5F5F5',
-        grey200: '#EEEEEE',
-        grey300: '#E0E0E0',
-        grey400: '#BDBDBD',
-        grey500: '#9E9E9E',
-        grey600: '#757575',
-        grey700: '#616161',
-        grey800: '#424242',
-        grey900: '#212121',
+        /* gray */
+        gray50: '#FAFAFA',
+        gray100: '#F5F5F5',
+        gray200: '#EEEEEE',
+        gray300: '#E0E0E0',
+        gray400: '#BDBDBD',
+        gray500: '#9E9E9E',
+        gray600: '#757575',
+        gray700: '#616161',
+        gray800: '#424242',
+        gray900: '#212121',
 
         /* yellow */
         yellow50: '#FFFEE6',
@@ -107,17 +107,17 @@ export const dark: Readonly<ColorTheme> = {
         purple800: '#500EAD',
         purple900: '#420399',
 
-        /* grey */
-        grey50: '#FAFAFA',
-        grey100: '#F5F5F5',
-        grey200: '#EEEEEE',
-        grey300: '#E0E0E0',
-        grey400: '#BDBDBD',
-        grey500: '#9E9E9E',
-        grey600: '#757575',
-        grey700: '#616161',
-        grey800: '#424242',
-        grey900: '#212121',
+        /* gray */
+        gray50: '#FAFAFA',
+        gray100: '#F5F5F5',
+        gray200: '#EEEEEE',
+        gray300: '#E0E0E0',
+        gray400: '#BDBDBD',
+        gray500: '#9E9E9E',
+        gray600: '#757575',
+        gray700: '#616161',
+        gray800: '#424242',
+        gray900: '#212121',
 
         /* yellow */
         yellow50: '#FFFEE6',
