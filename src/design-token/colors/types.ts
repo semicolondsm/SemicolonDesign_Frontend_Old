@@ -4,6 +4,7 @@ type MakeTokenSet<TGroup extends KnownColorGroup, TLightness extends number[]> =
 
 type ColorToken = (
     | 'white'
+    | 'black'
     | MakeTokenSet<'gray', [50, 100, 200, 300, 400, 500, 600, 700, 800, 900]>
     | MakeTokenSet<'purple', [50, 100, 200, 300, 400, 500, 600, 700, 800, 900]>
     | MakeTokenSet<'yellow', [50, 100, 200, 300, 400, 500, 600, 700, 800, 900]>

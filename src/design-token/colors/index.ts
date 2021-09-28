@@ -2,8 +2,8 @@ import { ColorTheme } from "./types";
 
 export const light: Readonly<ColorTheme> = {
     scheme: {
-        white : '#FFFFFF',
-    
+        white: '#FFFFFF',
+        black: '#000000',
         /* purple */
         purple50: '#F0E6FF',
         purple100: '#D3B3FF',
@@ -93,8 +93,8 @@ export const light: Readonly<ColorTheme> = {
 
 export const dark: Readonly<ColorTheme> = {
     scheme: {
-        white : '#FFFFFF',
-    
+        white: '#FFFFFF',
+        black: '#000000',
         /* purple */
         purple50: '#F0E6FF',
         purple100: '#D3B3FF',
