@@ -41,8 +41,6 @@ export function colorToCssObject(color: FillStyleType | BackgroundNoneFillStyleT
             return PurpleLight;
         case "border":
             return Border;
-        case "full":
-            return Full;
         case "link":
             return Link;
         case "bnDefault":
@@ -89,4 +87,9 @@ export function colorObjectToColorString(color?: FillStyleType | FillStyleObject
 
 export function firstCharToTypeMessage(message: string): BackgroundNoneFillStyleType {
     return "bn" + message.charAt(0).toUpperCase() + message.slice(1) as BackgroundNoneFillStyleType;
+}
+
+export function isBackgroundNone(color: string): boolean {
+    if(color.indexOf("bn") !== -1) return true;
+    else return false;
 }
