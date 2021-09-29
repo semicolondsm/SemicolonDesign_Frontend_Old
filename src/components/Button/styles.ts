@@ -5,11 +5,6 @@ import {
     Colors, 
     FontColors,
 } from './types';
-import {
-    colorObjectToCssObject,
-    colorObjectToColorString
-} from './utils';
-import { Botton } from '../typography';
 
 export const ButtonElement = styled.button<ButtonElementProps>`
     display: flex;
