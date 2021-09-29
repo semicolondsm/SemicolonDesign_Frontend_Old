@@ -1,4 +1,4 @@
-import { Meta, Canvas, ArgsTable, Story } from '@storybook/addon-docs';
+import { Meta, Canvas, ArgsTable } from '@storybook/addon-docs';
 import { 
     Title1,
     Title2,
@@ -14,7 +14,6 @@ import {
     Caption
      
 } from './';
-import { SDSProvider } from '../../contexts'
 
 <Meta title="Typography" />
 
@@ -23,7 +22,7 @@ import { SDSProvider } from '../../contexts'
 ** Font :** Noto Sans KR
 
 ** Weights :** 200(Light), 300(Regular), 400(Medium), 500(Bold)
-<SDSProvider>
+
 <Canvas>
     <Title1>Title1</Title1> 
     <Title2>Title2</Title2>
@@ -38,5 +37,5 @@ import { SDSProvider } from '../../contexts'
     <Botton>Botton</Botton>
     <Caption>Caption</Caption>
 </Canvas>
-</SDSProvider>
+
 <ArgsTable of={Title1} />
