@@ -73,3 +73,23 @@ export const FontColors = {
   bnDefault: colors.grey700,
   bnPurple: colors.purple400
 };
+
+export const DisabledColors = {
+  default: colors.grey50,
+  purple: colors.purple50,
+  purpleLight: colors.grey50,
+  border: colors.grey50,
+  link: colors.grey50,
+  bnDefault: colors.grey50,
+  bnPurple: colors.grey50,
+}
+
+export const DisabledFontColors = {
+  default: colors.grey300,
+  purple: colors.white,
+  purpleLight: colors.grey300,
+  border: colors.grey300,
+  link: colors.grey300,
+  bnDefault: colors.grey300,
+  bnPurple: colors.grey300,
+}
