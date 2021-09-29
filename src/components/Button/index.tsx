@@ -4,7 +4,9 @@ import {
   Colors, 
   ButtonProps,
   FontColors,
-  ActiveColors
+  ActiveColors,
+  DisabledColors,
+  DisabledFontColors
 } from './types';
 import { Botton } from '../typography';
 import { 
@@ -60,9 +62,9 @@ const Button: FC<ButtonProps> = (props = initialProps) => {
 
   const cursorType = disabled ? "DISABLED" : loading ? "LOADING" : "DEFAULT";
   const colorString = colorObjectToColorString(fill, true);
-  const BackgroundColor = Colors[colorString];
-  const BackgroundActiveColor = ActiveColors[colorString];
-  const FontColor = FontColors[colorString];
+  const BackgroundColor = disabled ? DisabledColors[colorString] : Colors[colorString];
+  const BackgroundActiveColor =  disabled ? DisabledColors[colorString] : ActiveColors[colorString];
+  const FontColor = disabled ? DisabledFontColors[colorString] : FontColors[colorString];
 
   const styledProps = {
     cursor: Cursor[cursorType],
