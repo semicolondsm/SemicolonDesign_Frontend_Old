@@ -83,7 +83,7 @@ const typographyList = {
 
 const TextElement = styled.div<Props>`
     margin: 0;
-    color : ${(props)=>props.color || colors.black };
+    color : ${(props)=>props.color || props.theme.colors.black };
     font-weight: ${({fontWeight, md}) => fontWeight ? typography.fontWeight[fontWeight]: defaultWeight[md]};
     ${(props)=>props.textAlign && `text-align: ${props.textAlign}`};
     ${(props)=>typographyList[props.md]};
