@@ -1,1 +1,1 @@
-export * from './SemicolonThemeProvider';
+export * from './SDSThemeProvider';

@@ -19,7 +19,7 @@ interface Props {
     mode?: 'auto' | 'dark-only' | 'light-only'
 }
 
-export const SDSProvider: FC<Props> = ({children, mode = 'auto'}) => {
+export const SDSThemeProvider: FC<Props> = ({children, mode = 'auto'}) => {
     const theme = React.useMemo(() => {
         const colorTheme = colors[getThemeName(mode, isDarkMode())];
         return {
