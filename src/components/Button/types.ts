@@ -36,10 +36,12 @@ export interface ButtonElementProps {
     paddingVertical: number;
     paddingHorizontal: number;
     borderRadius: number;
+    borderColor: string;
     size: SizeType;
     fillStyle: FillStyleType | FillStyleObjectType;
     marginLeft: number;
     marginRight: number;
+    isFull: boolean;
 };
 
 export const Colors = {
