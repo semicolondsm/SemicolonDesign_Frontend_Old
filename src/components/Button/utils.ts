@@ -1,8 +1,15 @@
+import { SDSTheme } from 'contexts';
+import { ColorScheme, ColorTheme } from 'design-token/colors/types';
 import { 
-    SizeType, 
     FillStyleType,
     BackgroundNoneFillStyleType,
     FillStyleObjectType,
+    Colors,
+    FontColors,
+    ActiveColors,
+    DisabledColors, 
+    DisabledFontColors,
+    ColorState
 } from './types';
 
 export function colorObjectToColorString(color?: FillStyleType | FillStyleObjectType, addedBn?: boolean) {
@@ -27,4 +34,26 @@ export function firstCharToTypeMessage(message: string): BackgroundNoneFillStyle
 export function isBackgroundNone(color: string): boolean {
     if(color.indexOf("bn") !== -1) return true;
     else return false;
+}
+
+export function hasOwnProperty<O extends object, K extends PropertyKey>(
+    obj: O,
+    key: K,
+  ): obj is O & Record<K, unknown> {
+    return Object.prototype.hasOwnProperty.call(obj, key);
+}
+
+export function fillStyleToColorString(fillStyle: FillStyleType, colroState: ColorState): keyof ColorScheme {
+    switch(colroState) {
+        case "default":
+            return Colors[fillStyle] as keyof ColorScheme;
+        case "active":
+            return ActiveColors[fillStyle] as keyof ColorScheme;
+        case "font":
+            return FontColors[fillStyle] as keyof ColorScheme;
+        case "diabled":
+            return DisabledColors[fillStyle] as keyof ColorScheme;
+        case "disabledFont":
+            return DisabledFontColors[fillStyle] as keyof ColorScheme;
+    }
 }
