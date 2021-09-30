@@ -36,13 +36,6 @@ export function isBackgroundNone(color: string): boolean {
     else return false;
 }
 
-export function hasOwnProperty<O extends object, K extends PropertyKey>(
-    obj: O,
-    key: K,
-  ): obj is O & Record<K, unknown> {
-    return Object.prototype.hasOwnProperty.call(obj, key);
-}
-
 export function fillStyleToColorString(fillStyle: FillStyleType, colroState: ColorState): keyof ColorScheme {
     switch(colroState) {
         case "default":
