@@ -1,74 +1,16 @@
+import { SDSTheme } from 'contexts';
+import { ColorScheme, ColorTheme } from 'design-token/colors/types';
 import { 
-    SizeType, 
     FillStyleType,
     BackgroundNoneFillStyleType,
     FillStyleObjectType,
+    Colors,
+    FontColors,
+    ActiveColors,
+    DisabledColors, 
+    DisabledFontColors,
+    ColorState
 } from './types';
-import {
-    Small, 
-    Medium,
-    Large,
-    Default, 
-    Purple, 
-    PurpleLight, 
-    Link, 
-    Full, 
-    Border, 
-    BnDefault, 
-    BnPurple
-} from './styles';
-
-export function sizeToCssObject(size: SizeType) {
-    switch(size) {
-        case "sm":
-            return Small;
-        case "md":
-            return Medium;
-        case "lg":
-            return Large;
-        default:
-            return Medium;
-    }
-}
-
-export function colorToCssObject(color: FillStyleType | BackgroundNoneFillStyleType) {
-    switch(color) {
-        case "default":
-            return Default;
-        case "purple":
-            return Purple;
-        case "purpleLight":
-            return PurpleLight;
-        case "border":
-            return Border;
-        case "link":
-            return Link;
-        case "bnDefault":
-            return BnDefault;
-        case "bnPurple":
-            return BnPurple;
-        default:
-            return Default;
-    }
-}
-
-export function colorObjectToCssObject(color: FillStyleType | FillStyleObjectType) {
-    if(typeof color === "string") {
-        return colorToCssObject(color);
-    } else {
-        if(color.background === true) return colorToCssObject(color.fillStyle || "default");
-        else {
-            switch(color.fillStyle) {
-                case "default":
-                    return colorToCssObject(firstCharToTypeMessage(color.fillStyle));
-                case "purple":
-                    return colorToCssObject(firstCharToTypeMessage(color.fillStyle));
-                default:
-                    return colorToCssObject(color.fillStyle || "default");
-            }
-        }
-    }
-}
 
 export function colorObjectToColorString(color?: FillStyleType | FillStyleObjectType, addedBn?: boolean) {
     if(typeof color === "string") return color || "default";
@@ -92,4 +34,19 @@ export function firstCharToTypeMessage(message: string): BackgroundNoneFillStyle
 export function isBackgroundNone(color: string): boolean {
     if(color.indexOf("bn") !== -1) return true;
     else return false;
+}
+
+export function fillStyleToColorString(fillStyle: FillStyleType, colroState: ColorState): keyof ColorScheme {
+    switch(colroState) {
+        case "default":
+            return Colors[fillStyle] as keyof ColorScheme;
+        case "active":
+            return ActiveColors[fillStyle] as keyof ColorScheme;
+        case "font":
+            return FontColors[fillStyle] as keyof ColorScheme;
+        case "diabled":
+            return DisabledColors[fillStyle] as keyof ColorScheme;
+        case "disabledFont":
+            return DisabledFontColors[fillStyle] as keyof ColorScheme;
+    }
 }
