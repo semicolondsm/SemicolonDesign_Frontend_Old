@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import styled from '@emotion/styled';
 import { colors, typography } from '../../shared/styles';
+import { ColorScheme } from 'design-token/colors/types';
 
 import { 
     body1, 
@@ -17,13 +18,15 @@ import {
     botton,
 } from './textStyles';
 
+
 interface OwnProps {
     md: Typo;
 }
 
+
 export interface TypoProps {
     children?: React.ReactNode,
-    color?: string,
+    color?: keyof ColorScheme,
     textAlign?: string, 
     className?: string,
     fontWeight?: FontWeight,
@@ -83,7 +86,7 @@ const typographyList = {
 
 const TextElement = styled.div<Props>`
     margin: 0;
-    color : ${(props)=>props.color || props.theme.colors.black };
+    color : ${({theme, color})=>color ? theme.colors[color] : theme.colors.black };
     font-weight: ${({fontWeight, md}) => fontWeight ? typography.fontWeight[fontWeight]: defaultWeight[md]};
     ${(props)=>props.textAlign && `text-align: ${props.textAlign}`};
     ${(props)=>typographyList[props.md]};
