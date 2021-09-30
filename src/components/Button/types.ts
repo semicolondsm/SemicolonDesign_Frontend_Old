@@ -1,3 +1,4 @@
+import { ColorScheme } from 'design-token/colors/types';
 import { ReactElement, Component, MouseEvent } from 'react';
 import { colors } from '../shared/styles';
 
@@ -5,7 +6,9 @@ export type SizeType = "sm" | "md" | "lg";
 
 export type BackgroundNoneSupportFillStyleType = "default" | "purple";
 
-export type FillStyleType = "purpleLight" | "link" | "border" | BackgroundNoneSupportFillStyleType;
+export type FillStyleType = "purpleLight" | "link" | "border" | BackgroundNoneSupportFillStyleType | BackgroundNoneFillStyleType;
+
+export type ColorState = "default" | "active" | "font" | "diabled" | "disabledFont";
 
 export type BackgroundNoneFillStyleType = "bnDefault" | "bnPurple";
 
@@ -31,67 +34,68 @@ export interface ButtonProps {
 
 export interface ButtonElementProps {
     cursor: CursorType;
-    background: string;
-    activeBackground: string;
+    background: keyof ColorScheme;
+    activeBackground: keyof ColorScheme;
     paddingVertical: number;
     paddingHorizontal: number;
     borderRadius: number;
-    borderColor: string;
+    borderColor: keyof ColorScheme;
+    color: keyof ColorScheme;
     size: SizeType;
-    fillStyle: FillStyleType | FillStyleObjectType;
+    fillStyle: FillStyleType;
     marginLeft: number;
     marginRight: number;
     isFull: boolean;
 };
 
 export const Colors = {
-  default: colors.grey100,
-  purple: colors.purple400,
-  purpleLight: colors.purple50,
-  border: colors.white,
-  borderColor: colors.grey100,
-  link: colors.white,
-  bnDefault: colors.white,
-  bnPurple: colors.white,
+  default: "gray100",
+  purple: "purple400",
+  purpleLight: "purple50",
+  border: "white",
+  borderColor: "gray100",
+  link: "white",
+  bnDefault: "white",
+  bnPurple: "white",
 };
 
 export const ActiveColors = {
-  default: colors.grey300,
-  purple: colors.purple500,
-  purpleLight: colors.purple100,
-  border: colors.grey100,
-  link: colors.white,
-  bnDefault: colors.grey50,
-  bnPurple: colors.purple50,
+  default: "gray300",
+  purple: "purple500",
+  purpleLight: "purple100",
+  border: "gray100",
+  link: "white",
+  bnDefault: "gray50",
+  bnPurple: "purple50",
 };
 
 export const FontColors = {
-  default: colors.grey700,
-  purple: colors.white,
-  purpleLight: colors.purple400,
-  border: colors.grey700,
-  link: colors.blue400,
-  full: colors.grey700,
-  bnDefault: colors.grey700,
-  bnPurple: colors.purple400
+  default: "gray700",
+  purple: "white",
+  purpleLight: "purple400",
+  border: "gray700",
+  link: "blue400",
+  full: "gray700",
+  bnDefault: "gray700",
+  bnPurple: "purple400",
 };
 
 export const DisabledColors = {
-  default: colors.grey50,
-  purple: colors.purple50,
-  purpleLight: colors.grey50,
-  border: colors.grey50,
-  link: colors.grey50,
-  bnDefault: colors.grey50,
-  bnPurple: colors.grey50,
+  default: "gray50",
+  purple: "purple50",
+  purpleLight: "gray50",
+  border: "gray50",
+  link: "gray50",
+  bnDefault: "gray50",
+  bnPurple: "gray50",
 }
 
 export const DisabledFontColors = {
-  default: colors.grey300,
-  purple: colors.white,
-  purpleLight: colors.grey300,
-  border: colors.grey300,
-  link: colors.grey300,
-  bnDefault: colors.grey300,
-  bnPurple: colors.grey300,
+  default: "gray300",
+  purple: "white",
+  purpleLight: "gray300",
+  border: "gray300",
+  link: "gray300",
+  bnDefault: "gray300",
+  bnPurple: "gray300",
 }
