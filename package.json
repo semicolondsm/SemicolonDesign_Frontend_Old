@@ -1,6 +1,6 @@
 {
   "name": "@xquare/ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "XQUARE의 웹 프론트의 UI를책임질 React전용 UI 라이브러리",
   "main": "dist/xquare-ui.js",
   "types": "dist/index.d.ts",
