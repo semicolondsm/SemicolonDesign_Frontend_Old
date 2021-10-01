@@ -1,8 +1,9 @@
 import React, { FC } from "react"
-import { ThemeProvider} from '@emotion/react';
+import { ThemeProvider } from '@emotion/react';
 import { colors } from '../design-token'
-import { getThemeName, isDarkMode } from "./utils";
+import { getThemeName } from "./utils";
 import { ColorScheme } from 'design-token/colors/types';
+import useDarkMode from "./useDarkMode";
 
 
 
@@ -20,8 +21,9 @@ interface Props {
 }
 
 export const SDSThemeProvider: FC<Props> = ({children, mode = 'auto'}) => {
+    const isDarkMode = useDarkMode();
     const theme = React.useMemo(() => {
-        const colorTheme = colors[getThemeName(mode, isDarkMode())];
+        const colorTheme = colors[getThemeName(mode, isDarkMode)];
         return {
             colors: {
                 ...colorTheme.scheme
