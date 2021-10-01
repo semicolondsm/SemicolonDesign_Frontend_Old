@@ -17,9 +17,3 @@ export const getThemeName = (mode: BehaviorMode, isDarkMode: boolean): ThemeName
     } as const)[mode];
 };
   
-export const isDarkMode = () => {
-    const regx = new RegExp(/dark/);
-    return typeof window !== 'undefined' ? 
-        regx.test(window.navigator.userAgent)
-        : false
-}
