@@ -1,4 +1,4 @@
-
+2021.10.03 https://github.com/semicolonDSM/SemicolonDesign_Frontend 로 통합됨
 
 # SemicolonDesign Frontend
 
